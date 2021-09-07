@@ -1,0 +1,533 @@
+@charset "utf-8";
+:root {
+  --color: #333;
+}
+
+body {
+  background: rgb(253, 251, 246);
+}
+
+/* -------- スライドポップ ---------- */
+.message {
+  width: 80px;
+  padding: 4px 0;
+  background: #2c2c2c;
+  color: #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+  position: absolute;
+  top: 55px;
+  right: 0;
+  text-align: center;
+  animation: slidePop 5s forwards 2s;
+  opacity: 0;
+}
+
+@keyframes slidePop {
+  0% {
+    transform: translateX(20px);
+    opacity: 0;
+    animation-timing-function: ease-out;
+  }
+  20%, 80% {
+    transform: none;
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+    pointer-events: none;
+  }
+}
+
+/* ----------ポートフォリオ文字-------------- */
+
+.css-portfolio-text {
+  color: var(--color);
+  font-size: 1.3rem;
+  margin: 0 0 0 20px;
+  transform: skewX(170deg);
+  display: flex;
+  font-family: 'Kaiti SC', Helvetica, '游ゴシック', 'Yu Gothic', 'メイリオ', Meiryo, sans-serif;
+}
+
+.css-portfolio-text img {
+  margin: 9% 1% 0 0;
+  width: 25px;
+  height: 25px;
+}
+
+.border {
+  position: relative;
+}
+
+.border:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-bottom: solid 2px #000;
+  animation: border_anim 1.5s linear forwards;
+}
+
+@keyframes border_anim {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* ハンバーガーメニュー*/
+
+.css-heder-area {
+  background: var(--color);
+  width: 100%;
+  height: 45px;
+  display: flex;
+}
+
+.sp-menu {
+  margin-left: auto;
+}
+
+.sp-menu #materialOpen {
+  font-size: 32px;
+  cursor: pointer;
+  color: azure;
+  margin: 5px 5px 0;
+  animation: purupuru_anim 1s infinite alternate;
+}
+
+@keyframes purupuru_anim {
+  0% {
+    transform: translate(0, 0);
+  }
+  5% {
+    transform: translate(-2px, -0);
+  }
+  10% {
+    transform: translate(2px, 0);
+  }
+  15% {
+    transform: translate(-2px, -0);
+  }
+  20% {
+    transform: translate(2px, 0);
+  }
+  25% {
+    transform: translate(-2px, -0);
+  }
+  30% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.sp-menu #materialOpen.hide {
+  display: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 60px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: center url(../../Portfolio-img/overlay.jpg);
+  text-align: center;
+  padding: 64px;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity .7S;
+}
+
+.MenuNav {
+  margin: 0;
+  height: 100%;
+}
+
+.overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+  padding: 0;
+}
+
+.overlay #materialclose {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.overlay li {
+  margin: 40px auto 0;
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity .1s, transform .7s;
+}
+
+.overlay ol {
+  margin: 50% auto;
+}
+
+.overlay li a {
+  font-size: 2em;
+  color: rgb(0, 0, 255);
+  font-weight: bold;
+  text-decoration: none;
+  font-weight: lighter;
+}
+
+.overlay.show li {
+  opacity: 1;
+  transform: none;
+  width: 160px;
+}
+
+.overlay.show li:nth-child(1) {
+  transition-delay: .3s;
+}
+
+.overlay.show li:nth-child(2) {
+  transition-delay: .5s;
+}
+
+.overlay.show li:nth-child(3) {
+  transition-delay: .7s;
+}
+
+/* トップ画像カルーセル */
+
+.carousel {
+  width: 100%;
+  margin: 16px auto;
+}
+
+.container {
+  width: 100%;
+  height: 220px;
+  margin: 16px auto;
+  overflow: hidden;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  transition: transform .3s;
+}
+
+li {
+  height: 100%;
+  min-width: 100%;
+}
+
+li>img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.resize {
+  background: cover url(../Portfolio-img/pexels.jpg);
+  animation: animationZoomOut 2.5s ease-in-out forwards;
+}
+
+@keyframes animationZoomOut {
+  0% {
+    transform: scale(1.2)
+  }
+  100% {
+    transform: scale(1.0)
+  }
+}
+
+/* 戻る進むボタン  */
+
+#prev, #next {
+  position: absolute;
+  top: 28%;
+  border: none;
+  font-size: 24px;
+  padding: 0 8px 4px;
+  opacity: .8;
+  cursor: pointer;
+  background-color: rgb(141, 140, 140);
+}
+
+#prev:hover, #next:hover {
+  opacity: .5;
+}
+
+#prev {
+  left: 0;
+}
+
+#next {
+  right: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+/* 丸ボタン */
+
+nav {
+  margin-top: -40px;
+  text-align: center;
+}
+
+nav button {
+  border: none;
+  width: 16px;
+  height: 16px;
+  background: #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: .6;
+  margin-right: 5px;
+}
+
+nav .current {
+  background: rgb(70, 69, 69);
+}
+
+/* -- ---------モーダルウィンドウ------- -- */
+
+/* Concept紹介openボタン */
+
+#open {
+  font-size: 1em;
+  cursor: pointer;
+  width: 7em;
+  border: 2px solid rgb(14, 13, 13);
+  border-radius: 4px;
+  text-align: center;
+  padding: 12px;
+  margin: 40px auto 20px;
+}
+
+#open>img {
+  width: 4vw;
+  height: 2vh;
+}
+
+/* Concept紹介close ボタン */
+
+#close {
+  font-size: 1em;
+  cursor: pointer;
+  width: 7em;
+  border: 2px solid rgb(14, 13, 13);
+  border-radius: 4px;
+  text-align: center;
+  padding: 10px;
+  margin: 16px auto 0;
+}
+
+/* Concept紹介open時のマスク */
+
+#mask {
+  background: rgba(20, 20, 20, 0.4);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+/* Concept紹介open時の背景 */
+
+#modal {
+  background: url(../../Portfolio-img//modals.jpg);
+  background-size: 100vw 35vh;
+  width: 30em;
+  padding: 20px;
+  border-radius: 4px;
+  position: absolute;
+  top: 200px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  transition: transform 0.5s;
+  z-index: 3;
+}
+
+/* Concept紹介open時の文言 */
+
+#modal>h2 {
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+#modal>p {
+  text-align: center;
+  line-height: 3em;
+}
+
+#mask.hidden {
+  display: none;
+}
+
+#modal.hidden {
+  transform: translate(0, -600px);
+}
+
+/* -----------使用言語紹介--------- */
+
+main>h1 {
+  font-weight: lighter;
+  color: var(--color);
+  margin: 30px auto 0;
+  text-align: center;
+}
+
+main>p {
+  font-weight: lighter;
+  color: var(--color);
+  margin: 10px auto;
+  text-align: center;
+}
+
+.css-pic>img {
+  width: 60px;
+  height: 60px;
+  margin: 30% auto;
+  opacity: 0.7;
+}
+
+.css-lang-section {
+  font-family: 'klee', Helvetica, '游ゴシック', 'Yu Gothic', 'メイリオ', Meiryo, sans-serif;
+  display: flex;
+}
+
+.css-desc {
+  text-align: center;
+  margin: 10px auto;
+  font-family: 'klee', Helvetica, '游ゴシック', 'Yu Gothic', 'メイリオ', Meiryo, sans-serif;
+}
+
+.css-lang-section:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+/* --------------アコーディオンUI---------- */
+
+dl {
+  margin: 0;
+}
+
+dl>div {
+  margin-bottom: 8px;
+}
+
+dt {
+  margin-top: 10px;
+  padding: 6px;
+  user-select: none;
+  display: flex;
+  justify-content: space-between;
+  color: aliceblue;
+}
+
+dt {
+  background-color: rgb(105, 89, 89);
+}
+
+dl>div.appear .material-icons {
+  transform: rotate(45deg);
+  border-radius: 50%;
+  transition: transform .3s;
+}
+
+dd {
+  padding: 8px;
+  text-align: center;
+  line-height: 2em;
+  margin: 0;
+  display: none;
+}
+
+/* アコーディオンUIクリック時 */
+
+dl>div.appear dd {
+  display: block;
+  animation: .3s fadeIn;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* プラスマーク */
+
+.material-icons {
+  color: rgba(255, 255, 255, 1);
+  font-size: 18px;
+  cursor: pointer;
+  border: #333 solid 1px;
+}
+
+/* ------------Top移動ボタン--------------- */
+
+img.upper {
+  margin: 10px 0 5% 45%;
+  width: 35px;
+  height: 30px;
+  background-color: rgb(253, 251, 246);
+  opacity: 0.7;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/* ------------contents--------------- */
+
+.css-footerContainar {
+  margin: 10px 0 30px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 50px 50px;
+}
+
+footer p {
+  margin: 12px auto;
+  text-align: center;
+  font-size: 1.3em;
+}
+
+.box1 {
+  border: solid .5px rgb(156, 155, 155);
+  border-right: none;
+}
+
+.box2 {
+  border: solid .5px rgb(156, 155, 155);
+}
+
+.box3 {
+  border: solid .5px rgb(156, 155, 155);
+  border-right: none;
+  border-top: none;
+}
+
+.box4 {
+  border: solid .5px rgb(156, 155, 155);
+  border-top: none;
+}

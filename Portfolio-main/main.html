@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../Portfolio-img/icon.png">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>Portfolio</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/sanitize.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+  <body>
+    <!--------- スライドポップ ----------->
+    <div class="message">Click↓</div>
+
+    <!-- ------ポートフォリオ文字 -------->
+    <section class="css-portfolio-text">
+      <img src="../Portfolio-img/portfolio-logo.png" alt="Portofolioロゴ">
+      <h1 class="border">Portfolio</h1>
+    </section>
+
+    <!-------ハンバーガーメニュー-------->
+    <header class="css-heder-area">
+      <div class="sp-menu">
+        <span class="material-icons" id="materialOpen">menu</span>
+      </div>
+      <div class="overlay">
+        <span class="material-icons" id="materialclose">close</span>
+        <nav class="MenuNav">
+          <ol>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">JavaScript</a></li>
+            <li><a href="#">PHP(Larabel)
+                <br> MySQL</a></li>
+          </ol>
+        </nav>
+      </div>
+    </header>
+    <!--トップ画像カルーセル-->
+    <section class="carousel">
+      <div class="container">
+        <ul>
+          <li><img src="../Portfolio-img/Mac.jpg" alt="Macの画像" class="resize"> </li>
+          <li><img src="../Portfolio-img/sea.jpg" alt="海の画像"> </li>
+          <li><img src="../Portfolio-img//pexels.jpg" alt="海外の街並み"> </li>
+        </ul>
+        <!-- 戻る進むボタン -->
+        <button id="prev">&laquo;</button>
+        <button id="next">&raquo;</button>
+      </div>
+      <!-- 丸ボタン -->
+      <nav id="js-nav">
+      </nav>
+    </section>
+
+    <!-- ---------モーダルウィンドウ------- -->
+    <div id="open">
+      Concept紹介
+      <img src="../Portfolio-img/mouse_black.png" alt="マウスロゴ">
+    </div>
+    <div id="mask" class="hidden"></div>
+    <section id="modal" class="hidden">
+      <h2>Tankyou</h2>
+      <p>技術紹介がコンセプトのポートフォリオです。<br>観覧に時間がかからないようシンプルでわかりやすさを心がけました。レスポンシブウェブデザインになっていますのでどの端末からもご覧いただけます。</p>
+      <div id="close">閉じる</div>
+    </section>
+    <!------------使用言語紹介----------->
+    <main class="containar">
+      <h1>使用言語</h1>
+      <p>language</p>
+
+      <section class="css-lang-section">
+        <div class="css-pic">
+          <img src="../Portfolio-img/html.png" alt="HTMLロゴ">
+        </div>
+        <div class="css-desc">
+          <p>こんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちは</p>
+        </div>
+      </section>
+      <section class="css-lang-section">
+        <div class="css-pic">
+          <img src="../Portfolio-img/css.png" alt="CSSロゴ">
+        </div>
+        <div class="css-desc">
+          <p>こんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちは</p>
+        </div>
+      </section>
+      <section class="css-lang-section">
+        <div class="css-pic">
+          <img src="../Portfolio-img/js.png" alt="JavaScriptロゴ">
+        </div>
+        <div class="css-desc">
+          <p>こんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちは</p>
+        </div>
+      </section>
+      <section class="css-lang-section">
+        <div class="css-pic">
+          <img src="../Portfolio-img/php.png" alt="PHPロゴ">
+        </div>
+        <div class="css-desc">
+          <p>こんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちは</p>
+        </div>
+      </section>
+      <section class="css-lang-section">
+        <div class="css-pic">
+          <img src="../Portfolio-img/mysql.png" alt="MySQLロゴ">
+        </div>
+        <div class="css-desc">
+          <p>こんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちは</p>
+        </div>
+      </section>
+    </main>
+
+    <!------------アコーディオン----------->
+    <dl>
+      <div>
+        <dt>◉このHPについて<span class="material-icons">add</span></dt>
+        <dd>回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。</dd>
+      </div>
+      <div>
+        <dt>◉他の作品について<span class="material-icons">add</span></dt>
+
+        <dd>回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。</dd>
+      </div>
+      <div>
+        <dt>◉工夫した点について<span class="material-icons">add</span></dt>
+        <dd>回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。</dd>
+      </div>
+    </dl>
+    <!-- ------------Top移動ボタン--------------- -->
+    <section class="css-footer-section">
+      <a href="#top"><img src="../Portfolio-img/upper.png" alt="Topへ戻る" class="upper"></a>
+    </section>
+    <!-- ------------contents--------------- -->
+    <footer class="css-footerContainar">
+      <div class="box1">
+        <p>About</p>
+      </div>
+      <div class="box2">
+        <p>Contact</p>
+      </div>
+      <div class="box3">
+        <p>Blog</p>
+      </div>
+      <div class="box4">
+        <p>Works</p>
+      </div>
+    </footer>
+
+
+    <script src="js/main.js"></script>
+  </body>
+
+</html>
