@@ -6,155 +6,178 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="../Portfolio-img/icon.png">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <title>Portfolio</title>
+  <!-- googleのマテリアルアイコン -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- リセット用CSS-->
   <link rel="stylesheet" href="https://unpkg.com/sanitize.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
+  <!--------- ローディング画面 ------->
+  <div id="loading-wrapper">
+    <div class="loader"></div>
+    <p>Loading...</p>
+  </div>
+  <!-- コンテンツ部分 -->
+  <div id="page"></div>
 
-  <body>
-    <!--------- スライドポップ ----------->
-    <div class="message">Click↓</div>
+  <!--------- スライドポップ ----------->
+  <div class="message" id="menu">Menu⬇️</div>
 
-    <!-- ------ポートフォリオ文字 -------->
-    <section class="css-portfolio-text">
-      <img src="../Portfolio-img/portfolio-logo.png" alt="Portofolioロゴ">
-      <h1 class="border">Portfolio</h1>
-    </section>
+  <!-- ------ポートフォリオ文字 -------->
+  <section class="css-portfolio-text">
+    <img src="../Portfolio-img/portfolio-logo.png" alt="Portofolioロゴ">
+    <h1 class="border">Portfolio</h1>
+  </section>
 
-    <!-------ハンバーガーメニュー-------->
-    <header class="css-heder-area">
-      <div class="sp-menu">
-        <span class="material-icons" id="materialOpen">menu</span>
-      </div>
-      <div class="overlay">
-        <span class="material-icons" id="materialclose">close</span>
-        <nav class="MenuNav">
-          <ol>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">JavaScript</a></li>
-            <li><a href="#">PHP(Larabel)
-                <br> MySQL</a></li>
-          </ol>
-        </nav>
-      </div>
-    </header>
-    <!--トップ画像カルーセル-->
-    <section class="carousel">
-      <div class="container">
-        <ul>
-          <li><img src="../Portfolio-img/Mac.jpg" alt="Macの画像" class="resize"> </li>
-          <li><img src="../Portfolio-img/sea.jpg" alt="海の画像"> </li>
-          <li><img src="../Portfolio-img//pexels.jpg" alt="海外の街並み"> </li>
-        </ul>
-        <!-- 戻る進むボタン -->
-        <button id="prev">&laquo;</button>
-        <button id="next">&raquo;</button>
-      </div>
-      <!-- 丸ボタン -->
-      <nav id="js-nav">
-      </nav>
-    </section>
-
-    <!-- ---------モーダルウィンドウ------- -->
-    <div id="open">
-      Concept紹介
-      <img src="../Portfolio-img/mouse_black.png" alt="マウスロゴ">
+  <!-------ハンバーガーメニュー-------->
+  <!-- バー部品 -->
+  <header class="css-heder-area">
+    <!-- ハンバーガー部品 -->
+    <div class="sp-menu">
+      <span class="material-icons" id="materialOpen">menu</span>
     </div>
-    <div id="mask" class="hidden"></div>
-    <section id="modal" class="hidden">
-      <h2>Tankyou</h2>
-      <p>技術紹介がコンセプトのポートフォリオです。<br>観覧に時間がかからないようシンプルでわかりやすさを心がけました。レスポンシブウェブデザインになっていますのでどの端末からもご覧いただけます。</p>
-      <div id="close">閉じる</div>
+    <!-- 開いた画面の領域 -->
+    <div class="overlay">
+      <!-- 開いた画面の閉じるボタンの部品 -->
+      <span class="material-icons" id="materialclose">close</span>
+      <!-- 開いた画面の選択要素部品領域 -->
+      <nav class="MenuNav">
+        <!-- 開いた画面の背景と文字の部品 -->
+        <ol class="css-ol-MenuNav">
+          <li><a href="../MyPortfolio/MyPortfolio.html" class="css-MenuNav-Profile">Profile</a></li>
+          <li><a href="../Js-Page/Js-Page.html" class="css-MenuNav-JavaScript">JavaScript</a></li>
+          <li><a href="#" class="css-MenuNav-PHP">PHP/MySQL</a></li>
+        </ol>
+        <img src="../Portfolio-img/overlay.jpg">
+        <!-- ハンバーガーを開いた時のバー -->
+        <div>
+          <div class="css-black-var " id="js-black-var"></div>
+          <div class="css-black-var " id="js-black-var"></div>
+          <div class="css-black-var " id="js-black-var"></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!--トップ画像カルーセル-->
+  <section class="carousel">
+    <div class="container">
+      <ul>
+        <li><img src="../Portfolio-img/Mac.jpg" alt="Macの画像" class="resize"> </li>
+        <li><img src="../Portfolio-img/WEB.jpg" alt="海の画像"> </li>
+        <li><img src="../Portfolio-img/cording.jpg" alt="海外の街並み"> </li>
+      </ul>
+      <!-- 戻る進むボタン -->
+      <button id="prev">&laquo;</button>
+      <button id="next">&raquo;</button>
+    </div>
+    <!-- 丸ボタン -->
+    <nav id="js-nav">
+    </nav>
+  </section>
+
+  <!-- ---------モーダルウィンドウ------- -->
+  <div id="open">
+    Concept紹介
+    <img src="../Portfolio-img/mouse_black.png" alt="マウスロゴ">
+  </div>
+  <div id="mask" class="hidden"></div>
+  <section id="modal" class="hidden">
+    <h2>Tankyou</h2>
+    <p>【今まで学んだ技術を全て入れる】がコンセプトの技術紹介用ポートフォリオです。<br>観覧に時間がかからないようシンプルでわかりやすさを心がけました。</p>
+    <div id="close">Close</div>
+  </section>
+  <!------------使用言語紹介----------->
+  <main class="containar">
+    <h1 class="border">使用言語</h1>
+    <p>language</p>
+    <!-- HTML CSSコーナー -->
+    <section class="css-lang-section">
+      <div class="css-pic">
+        <img src="../Portfolio-img/html.png" alt="HTMLロゴ">
+      </div>
+      <div class="css-pic">
+        <img src="../Portfolio-img/css.png" alt="CSSロゴ">
+      </div>
+      <div class="css-desc left-side">
+        <p>
+          基本的な仕様。見やすいデザイン。レスポンシブ対応。応用としてアニメーション。サイズ感の調整。etc..etc..etc..etc..etc..etc..etc..etc..etc..etc..etc..etc..etc..etc..etc..etc..etc..etc..etc..etc..etc..etc..etc..
+        </p>
+      </div>
     </section>
-    <!------------使用言語紹介----------->
-    <main class="containar">
-      <h1>使用言語</h1>
-      <p>language</p>
-
-      <section class="css-lang-section">
-        <div class="css-pic">
-          <img src="../Portfolio-img/html.png" alt="HTMLロゴ">
-        </div>
-        <div class="css-desc">
-          <p>こんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちは</p>
-        </div>
-      </section>
-      <section class="css-lang-section">
-        <div class="css-pic">
-          <img src="../Portfolio-img/css.png" alt="CSSロゴ">
-        </div>
-        <div class="css-desc">
-          <p>こんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちは</p>
-        </div>
-      </section>
-      <section class="css-lang-section">
-        <div class="css-pic">
-          <img src="../Portfolio-img/js.png" alt="JavaScriptロゴ">
-        </div>
-        <div class="css-desc">
-          <p>こんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちは</p>
-        </div>
-      </section>
-      <section class="css-lang-section">
-        <div class="css-pic">
-          <img src="../Portfolio-img/php.png" alt="PHPロゴ">
-        </div>
-        <div class="css-desc">
-          <p>こんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちは</p>
-        </div>
-      </section>
-      <section class="css-lang-section">
-        <div class="css-pic">
-          <img src="../Portfolio-img/mysql.png" alt="MySQLロゴ">
-        </div>
-        <div class="css-desc">
-          <p>こんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちは</p>
-        </div>
-      </section>
-    </main>
-
-    <!------------アコーディオン----------->
-    <dl>
-      <div>
-        <dt>◉このHPについて<span class="material-icons">add</span></dt>
-        <dd>回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。</dd>
+    <!-- JavaScriptコーナー -->
+    <section class="css-lang-section">
+      <div class="css-pic">
+        <img src="../Portfolio-img/js.png" alt="JavaScriptロゴ">
       </div>
-      <div>
-        <dt>◉他の作品について<span class="material-icons">add</span></dt>
-
-        <dd>回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。</dd>
+      <div class="css-desc right-side">
+        <p>
+          TOPページはフレームワークを使わず基本仕様。フレームワーク使用は<a href="#menu">メニュー</a> から。etc..etc..etc..etc..etc..etc..etc..etc..etc..etc..etc..etc..etc..etc..etc..etc..etc..etc..etc..etc..etc..etc..etc..
+        </p>
       </div>
-      <div>
-        <dt>◉工夫した点について<span class="material-icons">add</span></dt>
-        <dd>回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。</dd>
-      </div>
-    </dl>
-    <!-- ------------Top移動ボタン--------------- -->
-    <section class="css-footer-section">
-      <a href="#top"><img src="../Portfolio-img/upper.png" alt="Topへ戻る" class="upper"></a>
     </section>
-    <!-- ------------contents--------------- -->
-    <footer class="css-footerContainar">
-      <div class="box1">
-        <p>About</p>
+    <!-- PHPコーナー -->
+    <section class="css-lang-section">
+      <div class="css-pic">
+        <img src="../Portfolio-img/php.png" alt="PHPロゴ">
       </div>
-      <div class="box2">
-        <p>Contact</p>
+      <div class="css-desc left-side">
+        <p>こんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちは</p>
       </div>
-      <div class="box3">
-        <p>Blog</p>
+    </section>
+    <!-- MySQLコーナー -->
+    <section class="css-lang-section">
+      <div class="css-pic">
+        <img src="../Portfolio-img/mysql.png" alt="MySQLロゴ">
       </div>
-      <div class="box4">
-        <p>Works</p>
+      <div class="css-desc right-side">
+        <p>こんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちは</p>
       </div>
-    </footer>
+    </section>
+  </main>
+
+  <!------------アコーディオンUI------------->
+  <dl>
+    <div>
+      <dt>◉このHPについて<span class="material-icons">add</span></dt>
+      <dd>回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。</dd>
+    </div>
+    <div>
+      <dt>◉他の作品について<span class="material-icons">add</span></dt>
+
+      <dd>回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。</dd>
+    </div>
+    <div>
+      <dt>◉工夫した点について<span class="material-icons">add</span></dt>
+      <dd>回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。</dd>
+    </div>
+  </dl>
+  <!-- ----------Top移動ボタン------------- -->
+  <section class="css-footer-section">
+    <a href="#top"><img src="../Portfolio-img/upper.png" alt="Topへ戻る" class="upper"></a>
+  </section>
+  <!-- ------------contents--------------- -->
+  <footer class="css-footerContainar">
+    <div class="box1">
+      <a href="#">About</a>
+    </div>
+    <div class="box2">
+      <a href="#">Contact</a>
+    </div>
+    <div class="box3">
+      <a href="#">Blog</a>
+    </div>
+    <div class="box4">
+      <a href="#">Works</a>
+    </div>
+    <p>Portfolio</p>
+  </footer>
 
 
-    <script src="js/main.js"></script>
-  </body>
+  <script src="js/main.js"></script>
+</body>
 
 </html>

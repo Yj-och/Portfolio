@@ -1,0 +1,109 @@
+@charset "utf-8";
+body {
+  background: #efefef;
+  overflow: hidden;
+  width: 600px;
+  height: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+main {
+  display: flex;
+}
+
+img {
+  width: 600px;
+  height: auto;
+}
+
+.container {
+  display: flex;
+}
+
+div#js-panel {
+  width: 200px;
+  height: 150px;
+  position: absolute;
+  top: 43%;
+  left: 33%;
+  text-align: center;
+  font-size: 3.2em;
+  font-weight: bold;
+  line-height: 150px;
+  user-select: none;
+  letter-spacing: 10px;
+  color: gold;
+  text-shadow: 0 5px 5px black;
+  border: 10px solid;
+  border-radius: 30%;
+  box-shadow: 0 5px 5px black;
+}
+
+#js-start {
+  background: crimson;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  font-size: 2em;
+  color: #333;
+  line-height: 100px;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 10px 0 crimson;
+  border: solid 1px;
+  position: absolute;
+  top: 50%;
+  left: -5%;
+}
+
+#js-stop {
+  background: darkblue;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  font-size: 2em;
+  color: #efefef;
+  line-height: 100px;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 10px 0 darkblue;
+  border: solid 1px;
+  position: absolute;
+  top: 50%;
+  right: -5%;
+}
+
+#js-start:active {
+  box-shadow: 0 3px 0 crimson;
+  margin-top: 35px;
+}
+
+#js-stop:active {
+  box-shadow: 0 3px 0 darkblue;
+  margin-top: 35px;
+}
+
+#js-start:hover, #js-stop:hover {
+  opacity: 0.8;
+}
+
+ul {
+  display: flex;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+
+ul img {
+  width: 150px;
+  height: 150px;
+}
+
+ul>:nth-child(2n) {
+  transform: rotate(45deg);
+}

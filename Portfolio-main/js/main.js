@@ -1,17 +1,37 @@
 'use strict';
+
+
+window.onload = setTimeout(function () {
+  const loader = document.getElementById('loading-wrapper');
+  loader.classList.add('completed');
+}, 1500);
+
+
 // ハンバーガーメニュー-----------
 {
   const open = document.getElementById('materialOpen');
   const overlay = document.querySelector('.overlay');
   const close = document.getElementById('materialclose');
 
+
   open.addEventListener('click', () => {
     overlay.classList.add('show');
     open.classList.add('hide');
-  })
+
+    document.querySelectorAll('.css-black-var').forEach((anim) => {
+      anim.classList.add('MenuNav-color-anim');
+    });
+  });
+
   close.addEventListener('click', () => {
     overlay.classList.remove('show');
     open.classList.remove('hide');
+
+    document.querySelectorAll('.css-black-var').forEach((anim) => {
+      anim.classList.remove('MenuNav-color-anim');
+    });
+
+
   })
 }
 
@@ -22,7 +42,7 @@
   const close = document.getElementById('close');
   const modal = document.getElementById('modal');
   const mask = document.getElementById('mask');
-
+  // 選択された時の開け閉め処理
   open.addEventListener('click', () => {
     modal.classList.remove('hidden');
     mask.classList.remove('hidden');
@@ -112,7 +132,10 @@
 //   moveSlides();
 // });
 // }
-// 上記カルーセルを基盤にクラス処理-------------------
+
+
+// トップ画像カルーセル
+// 上記コードを基盤にクラス処理-------------
 {
   class Carousel {
     constructor() {
@@ -198,8 +221,10 @@
   carousel.setupDots();
   carousel.addListeners();
 }
-// アコーディオンUI
 
+
+//--------- アコーディオンUI----------
+// クラス処理
 {
   class Accordion {
     constructor() {

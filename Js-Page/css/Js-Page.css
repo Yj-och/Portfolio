@@ -1,0 +1,420 @@
+@charset "utf-8";
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+/*---------- ローディング画面-------- */
+
+#wrapper {
+  background: #333;
+  width: 100%;
+  height: 150vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+}
+
+/* ローディング画面　Icon */
+
+.circles {
+  width: 100vw;
+  margin: 40% 0 0;
+  display: flex;
+  justify-content: center;
+}
+
+div.circle {
+  animation: circle .5s alternate infinite ease;
+}
+
+.circle>img {
+  width: 80px;
+  height: 80px;
+  justify-content: space-between;
+}
+
+@keyframes circle {
+  0% {
+    transform: translate(0%, 10%);
+  }
+  50% {
+    transform: translate(0%, -45%);
+  }
+  100% {
+    transform: translate(0%, 0%);
+  }
+}
+
+.circle:nth-child(2) {
+  animation-delay: .2s;
+}
+
+.circle:nth-child(3) {
+  animation-delay: .3s;
+}
+
+/* ローディング画面　影 */
+
+.shadows {
+  display: flex;
+  justify-content: center;
+}
+
+.shadow {
+  width: 30px;
+  height: 4px;
+  margin: 0 20px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, .5);
+  animation: shadow .5s alternate infinite ease;
+}
+
+@keyframes shadow {
+  0% {
+    transform: scaleX(1.5);
+  }
+  40% {
+    transform: scaleX(1);
+    opacity: .7;
+  }
+  100% {
+    transform: scaleX(.2);
+    opacity: .4;
+  }
+}
+
+.shadow:nth-child(4) {
+  animation-delay: .2s
+}
+
+.shadow:nth-child(5) {
+  animation-delay: .3s;
+}
+
+/* Loading 文字 */
+
+.Loading {
+  width: 50vw;
+  height: 100px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+#js-Loading {
+  font-size: 1rem;
+  letter-spacing: 12px;
+  color: #fff;
+}
+
+/* 読み込み後削除処理 */
+
+.completed {
+  opacity: 0;
+  visibility: hidden;
+  transition-duration: .1s;
+}
+
+/* -------------ロゴ---------------- */
+
+.js-logo {
+  display: flex;
+  width: 80vw;
+  height: 40px;
+  margin: 0 auto;
+  position: relative;
+  justify-content: center;
+}
+
+.css-J {
+  font-size: 6rem;
+  color: gold;
+  margin: 5px 0;
+}
+
+.css-J-after {
+  font-size: 2.5rem;
+  color: #333;
+  font-weight: bold;
+  margin: 50px 0;
+}
+
+.css-J-after:before {
+  content: '';
+  position: absolute;
+  top: 100px;
+  left: 0px;
+  bottom: 0px;
+  border-bottom: solid 2px #000;
+  animation: border_anim 3s linear 3s forwards;
+}
+
+@keyframes border_anim {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.flame-logo {
+  width: 100vw;
+  margin: auto;
+}
+
+.img-containar ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  width: 50%;
+  padding: 0;
+  margin: 70px auto 20px;
+}
+
+.img-containar ul li>img {
+  width: 50px;
+  height: 50px;
+}
+
+/* --------------NAVバー------------ */
+
+.css-nav {
+  background-color: #ada496;
+}
+
+.css-nav ul {
+  display: flex;
+  height: 50px;
+  justify-content: flex-end;
+}
+
+.css-nav ul li {
+  margin: 5px 20px;
+  list-style: none;
+}
+
+.css-nav li img {
+  width: 40px;
+  height: 40px;
+}
+
+/* --------------タイトル------------ */
+
+.css-title {
+  text-align: center;
+  color: #333;
+  font-family: 'Kaiti SC', Helvetica, '游ゴシック', 'Yu Gothic', 'メイリオ', Meiryo, sans-serif;
+  margin-top: 40px;
+  line-height: 0.5em;
+}
+
+/* -- ---------モーダルウィンドウ------- -- */
+
+/* Concept紹介openボタン */
+
+#open {
+  font-size: 1rem;
+  cursor: url(../../Portfolio-img/mouseCursol.png), auto;
+  width: 80px;
+  border: 2px solid rgb(14, 13, 13);
+  border-radius: 4px;
+  text-align: center;
+  padding: 12px;
+  margin: 40px auto 20px;
+  box-shadow: 10px 10px 15px -10px;
+}
+
+/* Concept紹介openボタン内マウス */
+
+#open>img {
+  width: 20px;
+  height: 20px;
+  transform: rotate(-40deg);
+  position: relative;
+  top: 2px;
+  left: 5px;
+}
+
+/* Concept紹介close ボタン */
+
+#close {
+  font-size: 1em;
+  cursor: pointer;
+  width: 7em;
+  border: 2px solid rgb(14, 13, 13);
+  border-radius: 4px;
+  text-align: center;
+  padding: 10px;
+  margin: 16px auto 0;
+}
+
+/* Concept紹介open時のマスク */
+
+#mask {
+  background: rgba(20, 20, 20, 0.4);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+/* Concept紹介open時の背景 */
+
+#modal {
+  background: center/cover url(../../Portfolio-img//modals.jpg);
+  width: 100vw;
+  padding: 20px;
+  border-radius: 4px;
+  position: absolute;
+  top: 200px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  transition: transform 0.5s;
+  z-index: 3;
+}
+
+/* Concept紹介open時の文言 */
+
+#modal>h2 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+#modal>p {
+  text-align: center;
+  line-height: 3rem;
+}
+
+#mask.hidden {
+  display: none;
+}
+
+#modal.hidden {
+  transform: translate(0, -600px);
+}
+
+/* ---------------ミニアプリ集----------------------- */
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 150px);
+  grid-auto-rows: 150px;
+  gap: 35px 35px;
+  margin: 40px auto;
+  justify-content: center;
+}
+
+.Omikuji {
+  position: relative;
+  border: #000 1px solid;
+  box-shadow: 10px 10px 15px -10px;
+}
+
+.css-omikuji-img {
+  width: 100%;
+  height: 75%;
+}
+
+.css-Omikuji-btn {
+  position: relative;
+  top: 5px;
+  left: 27%;
+  display: inline-block;
+  position: relative;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  color: #000;
+  transition: .4s;
+}
+
+.css-Omikuji-btn:hover {
+  color: deeppink;
+}
+
+.css-Omikuji-btn:before, .css-Omikuji-btn:after {
+  position: absolute;
+  top: 0;
+  content: '';
+  width: 8px;
+  height: 100%;
+  display: inline-block;
+}
+
+.css-Omikuji-btn:before {
+  border-left: solid 2px #0a0101;
+  border-top: solid 2px #0a0101;
+  border-bottom: solid 2px #0a0101;
+  left: 0;
+}
+
+.css-Omikuji-btn:after {
+  content: '';
+  border-top: solid 2px #0a0101;
+  border-right: solid 2px #0a0101;
+  border-bottom: solid 2px #0a0101;
+  right: 0;
+}
+
+.box2 {
+  background-color: rgb(255, 0, 0);
+  border: #000 1px solid;
+  box-shadow: 10px 10px 15px -10px;
+}
+
+.box3 {
+  background-color: rgb(217, 255, 0);
+  border: #000 1px solid;
+  box-shadow: 10px 10px 15px -10px;
+}
+
+.box4 {
+  background-color: rgb(60, 255, 0);
+  border: #000 1px solid;
+  box-shadow: 10px 10px 15px -10px;
+}
+
+/* ------------Top移動ボタン--------------- */
+
+.css-footer-section {
+  text-align: center;
+}
+
+img.upper {
+  margin: 20px 0;
+  width: 35px;
+  height: 35px;
+  background-color: rgb(253, 251, 246);
+  opacity: 0.7;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/* -------------JavaScriptロゴ---------------- */
+
+.footer-logo {
+  display: flex;
+  justify-content: center;
+  width: 30vw;
+  margin: 0 auto;
+}
+
+.css-footer-J {
+  font-size: 1.5em;
+  color: gold;
+  margin: 8px 0;
+  text-align: center;
+}
+
+.css-footer-J-after {
+  text-align: center;
+  font-size: 1em;
+  color: rgb(141, 139, 139);
+  font-weight: bold;
+}
