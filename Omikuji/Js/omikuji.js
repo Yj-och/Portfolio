@@ -4,27 +4,38 @@
   const panel = document.getElementById('js-panel');
   const stop = document.getElementById('js-stop');
   var start = document.getElementById('js-start');
-  // let timeOutId;
-
+  let isPlaying = false;
+  let timeOutId;
   function setTime() {
 
     const results = [
-      '極吉!!!', //0
-      '大吉!!', //1
-      '中吉!', //2
-      '小吉', //3
+      '極吉!!!',
+      '大吉!!',
+      '中吉!',
+      '小吉',
     ];
 
     panel.textContent = results[Math.floor(Math.random() * results.length)];
+    loc = 0;
     return;
   }
 
-  start.addEventListener('click', () => {
-    this.timeOutId = setInterval(setTime, 50);
-  });
+  function Play() {
+    start.addEventListener('click', () => {
+      if (isPlaying === true) {
+        return;
+      }
+      isPlaying = true;
+      timeOutId = setInterval(setTime, 50);
+      loc++;
+    });
+  }
 
-  stop.addEventListener('click', () => {
-    this.clearTimeout(timeOutId);
-  });
+  Play();
+
+    stop.addEventListener('click', () => {
+      clearTimeout(timeOutId);
+    });
+
 
 }

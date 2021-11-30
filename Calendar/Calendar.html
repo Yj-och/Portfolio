@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calendar</title>
+  <title>Calendar ToDo</title>
   <link rel="icon" href="../Calendar/calendar-img/calendar.png">
   <link rel="stylesheet" href="css/calendar.css">
 
@@ -37,8 +37,37 @@
       </tr>
     </tfoot>
   </table>
-<!-- --------------------------------------- -->
+  <!-- ---------Vue.js----ToDo---------------- -->
 
+  <div id="app" class="css-container">
+    <h1>My Todos
+      <button v-on:click="purge">Purge</button>
+      <span class="info"> ({{ remaining }}/{{ todos.length }})</span>
+    </h1>
+    <ul v-if="todos.length">
+      <li v-for="(todo,index) in todos">
+        <input type="checkbox" v-model="todo.isDone">
+        <span v-bind:class="{done:todo.isDone}">{{ todo.title }}</span>
+        <span v-on:click='deleteItem(index)' class="outer">
+          <div class="inner">
+            <label>Delete?</label>
+          </div>
+        </span>
+      </li>
+    </ul>
+    <ul v-else>
+      <li>Nothing to do...</li>
+    </ul>
+
+    <form v-on:submit.prevent='addItem'>
+      <input type="text" v-model='newItem'>
+      <input type="submit" value="Add">
+    </form>
+  </div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   <script src="js/calendar.js"></script>
 </body>
 

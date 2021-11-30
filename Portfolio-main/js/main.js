@@ -13,7 +13,6 @@ window.onload = setTimeout(function () {
   const overlay = document.querySelector('.overlay');
   const close = document.getElementById('materialclose');
 
-
   open.addEventListener('click', () => {
     overlay.classList.add('show');
     open.classList.add('hide');
@@ -34,8 +33,6 @@ window.onload = setTimeout(function () {
 
   })
 }
-
-
 // モーダルウィンドウ---------------
 {
   const open = document.getElementById('open');

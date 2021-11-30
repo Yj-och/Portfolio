@@ -42,12 +42,7 @@
       <h1 class="css-J">J</h1>
       <p class="css-J-after">avaScript</p>
     </div>
-    <ul class="flame-logo">
-      <li><img src="https://img.icons8.com/color/48/000000/vue-js.png" /></li>
-      <li><img src="https://img.icons8.com/plasticine/100/000000/react.png" /></li>
-      <li><img src="https://img.icons8.com/ios-filled/50/000000/jquery.png" /></li>
-    </ul>
-    </div>
+
 
   </header>
   <nav>
@@ -58,8 +53,30 @@
       </ul>
   </nav>
   </div>
+  <!-- ----------------カルーセル---------------------- -->
+  <section class="carousel">
+    <div class="cal-container">
+      <ul>
+        <li><img src="../Js-Page/Js-Page-img/pic1.png"></li>
+        <li><img src="../Js-Page/Js-Page-img/pic2.png"></li>
+        <li><img src="../Js-Page/Js-Page-img/pic3.png"></li>
+        <li><img src="../Js-Page/Js-Page-img/pic4.png"></li>
+    
+      </ul>
+      <button id="prev">&laquo;</button>
+      <button id="next">&raquo;</button>
+    </div>
+    <nav>
+      <!-- <button class="current"></button>
+      <button></button>
+      <button></button> -->
+    </nav>
+  </section>
+
+
+
   <!-- --------------タイトル------------ -->
-  <h2 class="css-title">JavaScriptミニゲームアプリ</h2>
+  <h2 class="css-title">JavaScriptミニアプリ集</h2>
   <p class="css-title">GAME</p>
 
   <!-- ---------モーダルウィンドウ------- -->
@@ -69,25 +86,61 @@
   </div>
   <div id="mask" class="hidden"></div>
   <section id="modal" class="hidden">
-    <h2>Tankyou</h2>
-    <p>JavaScriptのみを使ったページです。<br>JavaScriptの学習のためこのページから先Gameページはレスポンシブウェブデザインには対応しておりません。<br>ご注意下さい</p>
+    <h2>Thankyou</h2>
+    <p>JavaScriptを使ったページです。<br>一部にVue.js/jQueryを使用しています</p>
     <div id="close">閉じる</div>
   </section>
-  <!-- ----------------ミニアプリ集---------------------- -->
+  <!-- ----------------アプリ集---------------------- -->
   <main class="container">
-    <div class="Omikuji">
+    <div class="comon">
       <!-- おみくじ -->
-      <img src="../Js-Page/Js-Page-img/OmikujiPage.jpg" alt="おみくじゲームの写真" class="css-omikuji-img">
-      <a href="../Omikuji/omikuji.html" class="css-Omikuji-btn">START</a>
+      <img src="../Js-Page/Js-Page-img/OmikujiPage.jpg" alt="おみくじゲームの写真" class="css-comon-img">
+      <a href="../Omikuji/omikuji.html" class="css-comon-btn">START</a>
+    </div>
+    <!-- typing -->
+    <div class="comon">
+      <img src="../Js-Page/Js-Page-img/typing.jpg" class="css-comon-img" alt="タイピングゲームの写真">
+      <a href="../Typing/Typing.html" class="css-comon-btn">START</a>
+    </div>
+    <!-- calender -->
+    <div class="comon">
+      <img src="../Js-Page/Js-Page-img/スクリーンショット 2021-09-21 10.51.38.jpg" class="css-comon-img" alt="カレンダーの写真">
+      <a href="../Calendar/Calendar.html" class="css-comon-btn">START</a>
+    </div>
+    <div class="comon">
+      <img src="../Js-Page/Js-Page-img/Quiz.jpg" class="css-comon-img" alt="クイズの写真">
+      <a href="../Quiz/quiz.html" class="css-comon-btn">START</a>
     </div>
 
-    <div class="box2">2</div>
-    <div class="box3">3</div>
     <div class="box4">4</div>
   </main>
 
+  <section class="etc">
+    <h3>その他...</h3>
+    <a href="../Bingo/bingo.html">Bingoシート</a>
+    <a href="../TrainingSheet/training.html">カレンダー</a>
+    <a href="../stopWatch/stopWatch.html">ストップウォッチ</a>
+  </section>
+  <!-- ----------タブ----------- -->
+  <div class="tab-container">
+    <ul class="menu">
+      <li><a href="#" class="active" data-id="about">サイトの概要</a></li>
+      <li><a href="#" data-id="service">サービス内容</a></li>
+      <li><a href="#" data-id="contact">お問い合わせ</a></li>
+    </ul>
+    </ul>
+    <section class="content active" id="about">
+      サイトの概要。サイトの概要。サイトの概要。サイトの概要。サイトの概要。サイトの概要。サイトの概要。サイトの概要。サイトの概要。サイトの概要。サイトの概要。サイトの概要。
+    </section>
 
+    <section class="content" id="service">
+      サービス内容。サービス内容。サービス内容。サービス内容。サービス内容。サービス内容。サービス内容。サービス内容。サービス内容。サービス内容。サービス内容。サービス内容。
+    </section>
 
+    <section class="content" id="contact">
+      お問い合わせ。お問い合わせ。お問い合わせ。お問い合わせ。お問い合わせ。お問い合わせ。お問い合わせ。お問い合わせ。お問い合わせ。お問い合わせ。お問い合わせ。お問い合わせ。
+    </section>
+  </div>
 
   <!-- ----------Top移動ボタン------------- -->
   <section class="css-footer-section">
@@ -101,6 +154,11 @@
     <p class="css-footer-J-after">avaScript</p>
   </section>
 
+
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="JS/Js-Page.js"></script>
 </body>
 

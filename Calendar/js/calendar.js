@@ -3,7 +3,7 @@
 // console.clear();
 
 {
-// 今日の年月
+  // 今日の年月
   const today = new Date();
   let year = today.getFullYear();
   let month = today.getMonth();
@@ -42,7 +42,7 @@
         isDisabled: false,
       });
     }
-// 今日の日付か判定する処理
+    // 今日の日付か判定する処理
     if (year === today.getFullYear() && month === today.getMonth()) {
       dates[today.getDate() - 1].isToday = true;
     }
@@ -151,3 +151,60 @@
 
   createCalendar();
 }
+
+// -----------Vue.js--------------
+// --------ToDo----------------
+
+(function () {
+
+  let vm = new Vue({
+    el: '#app',
+    data: {
+      newItem: '',
+      todos: []
+    },
+    watch: {
+      todos: {
+        handler: function () {
+          localStorage.setItem('todos', JSON.stringify(this.todos));
+        },
+        deep: true
+      }
+    },
+    mounted: function () {
+      this.todos = JSON.parse(localStorage.getItem('todos')) || [];
+    },
+    methods: {
+      addItem: function () {
+        let item = {
+          title: this.newItem,
+          isDone: false,
+        }
+        this.todos.push(item);
+        this.newItem = '';
+      },
+      deleteItem: function (index) {
+        if (confirm('削除しますか？')) {
+          this.todos.splice(index, 1);
+        }
+      },
+      purge: function () {
+        if (!confirm('完了したタスクを削除しますか？')) {
+          return;
+        }
+        this.todos = this.todos.filter(function (todo) {
+          return !todo.isDone;
+        });
+      }
+    },
+    computed: {
+      remaining: function () {
+        let items = this.todos.filter(function (todo) {
+          return !todo.isDone;
+        });
+        return items.length;
+      }
+    }
+  });
+
+})();

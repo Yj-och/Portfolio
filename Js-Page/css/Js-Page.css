@@ -163,21 +163,24 @@ div.circle {
 
 .flame-logo {
   width: 100vw;
-  margin: auto;
+  margin: 0;
 }
 
 .img-containar ul {
   display: flex;
   list-style: none;
-  justify-content: space-between;
-  width: 50%;
-  padding: 0;
-  margin: 70px auto 20px;
+  position: absolute;
 }
 
 .img-containar ul li>img {
   width: 50px;
   height: 50px;
+  margin-right: 0;
+}
+
+.flame-logo li {
+  position: relative;
+  top: 80px;
 }
 
 /* --------------NAVバー------------ */
@@ -190,6 +193,7 @@ div.circle {
   display: flex;
   height: 50px;
   justify-content: flex-end;
+  margin-top: 80px;
 }
 
 .css-nav ul li {
@@ -200,6 +204,92 @@ div.circle {
 .css-nav li img {
   width: 40px;
   height: 40px;
+}
+
+/* ------カルーセル------------*/
+
+.carousel {
+  width: 80%;
+  margin: 16px auto;
+}
+
+.cal-container {
+  height: 220px;
+  /* outline: 8px solid red; */
+  position: relative;
+  overflow: hidden;
+}
+
+.cal-container ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  transition: transform .3s;
+}
+
+.cal-container ul li {
+  height: 100%;
+  min-width: 100%;
+}
+
+.cal-container ul li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ボタン */
+
+#prev, #next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: rgba(0, 0, 0, .8);
+  color: #fff;
+  font-size: 24px;
+  padding: 0 8px 4px;
+  cursor: pointer;
+}
+
+#prev:hover, #next:hover {
+  opacity: .8;
+}
+
+#prev {
+  left: 0;
+}
+
+#next {
+  right: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+nav {
+  margin-top: 16px;
+  text-align: center;
+}
+
+nav button+button {
+  margin-left: 8px;
+}
+
+nav button {
+  border: none;
+  width: 16px;
+  height: 16px;
+  background: #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+nav .current {
+  background: #999;
 }
 
 /* --------------タイトル------------ */
@@ -312,18 +402,18 @@ div.circle {
   justify-content: center;
 }
 
-.Omikuji {
+.comon {
   position: relative;
   border: #000 1px solid;
   box-shadow: 10px 10px 15px -10px;
 }
 
-.css-omikuji-img {
+.css-comon-img {
   width: 100%;
-  height: 75%;
+  height: 70%;
 }
 
-.css-Omikuji-btn {
+.css-comon-btn {
   position: relative;
   top: 5px;
   left: 27%;
@@ -335,11 +425,11 @@ div.circle {
   transition: .4s;
 }
 
-.css-Omikuji-btn:hover {
+.css-comon-btn:hover {
   color: deeppink;
 }
 
-.css-Omikuji-btn:before, .css-Omikuji-btn:after {
+.css-comon-btn:before, .css-comon-btn:after {
   position: absolute;
   top: 0;
   content: '';
@@ -348,14 +438,14 @@ div.circle {
   display: inline-block;
 }
 
-.css-Omikuji-btn:before {
+.css-comon-btn:before {
   border-left: solid 2px #0a0101;
   border-top: solid 2px #0a0101;
   border-bottom: solid 2px #0a0101;
   left: 0;
 }
 
-.css-Omikuji-btn:after {
+.css-comon-btn:after {
   content: '';
   border-top: solid 2px #0a0101;
   border-right: solid 2px #0a0101;
@@ -363,23 +453,23 @@ div.circle {
   right: 0;
 }
 
-.box2 {
-  background-color: rgb(255, 0, 0);
-  border: #000 1px solid;
-  box-shadow: 10px 10px 15px -10px;
-}
-
-.box3 {
-  background-color: rgb(217, 255, 0);
-  border: #000 1px solid;
-  box-shadow: 10px 10px 15px -10px;
-}
-
 .box4 {
   background-color: rgb(60, 255, 0);
   border: #000 1px solid;
   box-shadow: 10px 10px 15px -10px;
 }
+
+/* --------その他項目---------- */
+
+.etc {
+  width: 100%;
+  height: 100px;
+  margin-left: 10%;
+  display: flex;
+  flex-direction: column;
+}
+
+
 
 /* ------------Top移動ボタン--------------- */
 
@@ -417,4 +507,50 @@ img.upper {
   font-size: 1em;
   color: rgb(141, 139, 139);
   font-weight: bold;
+}
+
+/* ---------------------- */
+
+.tab-container {
+  margin: 30px auto;
+  width: 500px;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.menu li a {
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+  padding: 8px 0;
+  color: #333;
+  text-decoration: none;
+  border-radius: 4px 4px 0 0;
+}
+
+.menu li a.active {
+  background: #333;
+  color: #fff;
+}
+
+.menu li a:not(.active):hover {
+  opacity: 0.5;
+  transition: opacity 0.4s;
+}
+
+.content.active {
+  background: #333;
+  color: #fff;
+  min-height: 150px;
+  padding: 12px;
+  display: block;
+}
+
+.content {
+  display: none;
 }
